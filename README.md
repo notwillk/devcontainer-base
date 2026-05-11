@@ -39,11 +39,11 @@ docker run --rm -it --privileged ghcr.io/notwillk/devcontainer-base:latest bash
 
 This repository is intentionally small:
 
-- `/home/runner/work/devcontainer-base/devcontainer-base/Dockerfile` builds the image on top of `mcr.microsoft.com/devcontainers/base:ubuntu` and installs Docker plus Ansible
-- `/home/runner/work/devcontainer-base/devcontainer-base/entrypoint.sh` starts `dockerd` in the background before handing off to the requested command
-- `/home/runner/work/devcontainer-base/devcontainer-base/test.sh` verifies that Docker, Compose, Buildx, the Docker daemon, and Ansible are available inside the built image
-- `/home/runner/work/devcontainer-base/devcontainer-base/.github/workflows/build.yml` builds the image in CI, runs `test.sh`, and pushes `latest` plus a SHA-tagged image to GHCR from `main`
-- `/home/runner/work/devcontainer-base/devcontainer-base/LICENSE` contains the repository license
+- `Dockerfile` builds the image on top of `mcr.microsoft.com/devcontainers/base:ubuntu` and installs Docker plus Ansible
+- `entrypoint.sh` starts `dockerd` in the background before handing off to the requested command
+- `test.sh` verifies that Docker, Compose, Buildx, the Docker daemon, and Ansible are available inside the built image
+- `.github/workflows/build.yml` builds the image in CI, runs `test.sh`, and pushes `latest` plus a SHA-tagged image to GHCR from `main`
+- `LICENSE` contains the repository license
 
 ## What to know next time you come back
 
