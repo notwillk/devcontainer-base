@@ -18,4 +18,10 @@ docker compose version > /dev/null 2>&1 && pass "docker compose plugin found" ||
 # docker buildx plugin is present
 docker buildx version > /dev/null 2>&1 && pass "docker buildx plugin found" || fail "docker buildx plugin not found"
 
+# ansible is present
+which ansible > /dev/null 2>&1 && pass "ansible binary found" || fail "ansible binary not found"
+
+# ansible reports a version
+ansible --version > /dev/null 2>&1 && pass "ansible --version works" || fail "ansible --version failed"
+
 echo "=== All tests passed ==="
