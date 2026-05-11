@@ -18,6 +18,9 @@ docker compose version > /dev/null 2>&1 && pass "docker compose plugin found" ||
 # docker buildx plugin is present
 docker buildx version > /dev/null 2>&1 && pass "docker buildx plugin found" || fail "docker buildx plugin not found"
 
+# docker daemon is reachable
+docker info > /dev/null 2>&1 && pass "docker daemon reachable" || fail "docker daemon not reachable"
+
 # ansible is present
 which ansible > /dev/null 2>&1 && pass "ansible binary found" || fail "ansible binary not found"
 

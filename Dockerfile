@@ -27,3 +27,9 @@ RUN apt-get update \
     && apt-get install -y ansible \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
+
+# Entrypoint: starts dockerd in the background when the container launches.
+# The container must be run with --privileged for dockerd to work (Docker-in-Docker).
+COPY entrypoint.sh /usr/local/bin/entrypoint.sh
+RUN chmod +x /usr/local/bin/entrypoint.sh
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
